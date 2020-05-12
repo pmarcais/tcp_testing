@@ -15,7 +15,6 @@ func main() {
 		fmt.Println("Please provide a port number!")
 		return
 	}
-	fmt.Println("UDP server is running!")
 
 	PORT := ":" + arguments[1]
 
@@ -30,8 +29,9 @@ func main() {
 		fmt.Println(err)
 		return
 	}
-
 	defer conn.Close()
+
+	fmt.Println("UDP server is running!")
 
 	buffer := make([]byte, 10000)
 
